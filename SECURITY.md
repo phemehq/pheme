@@ -23,7 +23,8 @@ You will receive an acknowledgment within 48 hours. Once confirmed, critical vul
 
 - All changes are reviewed before merging
 - Dependencies are regularly audited for known vulnerabilities
-- All commits must be GPG-signed (`git commit -S`)
+- All commits must carry a DCO sign-off (`git commit -s`); see CONTRIBUTING.md
+- GPG-signed commits (`git commit -S`) are encouraged for maintainers
 - No secrets, API keys, or credentials are committed to the repository
 - Security-relevant functionality is covered by tests
 

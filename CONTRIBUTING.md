@@ -33,8 +33,8 @@ git checkout -b feature/my-feature
 # Make changes and test
 go test ./... && pytest python/tests/
 
-# Commit with conventional format
-git commit -m "feat: description of change"
+# Commit with conventional format, signed off (DCO)
+git commit -s -m "feat: description of change"
 
 # Push and open PR
 git push origin feature/my-feature
@@ -49,6 +49,26 @@ Follow [conventional commits](https://www.conventionalcommits.org/):
 - `docs:` Documentation
 - `test:` Tests
 - `chore:` Build, dependencies
+
+## Developer Certificate of Origin (DCO)
+
+Every commit must be signed off under the [Developer Certificate of Origin](https://developercertificate.org/).
+The sign-off certifies that you wrote the change, or otherwise have the right to submit it under the
+project's Apache 2.0 license. It is a single trailer line added automatically by `git commit -s`:
+
+```text
+Signed-off-by: Your Name <your.email@example.com>
+```
+
+Use the same name and email as your commit author identity. A CI check rejects any pull request
+whose commits are missing the sign-off.
+
+Practical tips:
+
+- Forgot on the last commit: `git commit --amend -s --no-edit`, then force-push your branch.
+- Backfill a whole branch: `git rebase --signoff main`.
+- GPG signing (`git commit -S`) is encouraged for maintainers but is separate from the DCO sign-off,
+  which is required for everyone.
 
 ## Testing
 
