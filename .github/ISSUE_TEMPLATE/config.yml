@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Architecture decisions and blueprints
+    url: https://github.com/phemehq/architecture-decision-records/issues/new/choose
+    about: Propose an ADR or an RFC-style blueprint in the dedicated records repo, not here.
+  - name: Pheme discussions
+    url: https://github.com/orgs/phemehq/discussions
+    about: Open-ended questions and ideas that are not yet a bug or feature request.
