@@ -1,0 +1,11 @@
+# DCO enforcement via the CNCF DCO2 app: https://github.com/cncf/dco2
+# Backwards compatible with the dcoapp/app config format.
+
+allowOverrideAction: true
+
+allowRemediationCommits:
+  individual: true   # authors can fix a missed sign-off without rewriting history
+  thirdParty: false
+
+require:
+  members: true      # no exemptions; maintainers sign off too
