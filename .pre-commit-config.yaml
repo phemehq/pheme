@@ -1,0 +1,45 @@
+# Activate once per clone:
+#   pre-commit install && pre-commit install --hook-type commit-msg
+# Bump pinned revs later with: pre-commit autoupdate
+
+minimum_pre_commit_version: "3.5.0"
+
+default_install_hook_types:
+  - pre-commit
+  - commit-msg
+
+repos:
+  # General hygiene
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: check-added-large-files
+        args: ['--maxkb=1024']
+      - id: check-case-conflict
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+      - id: detect-private-key
+      - id: no-commit-to-branch
+        # devel is the active mainline
+        args: ['--branch', 'devel', '--branch', 'main']
+
+  # Commit message: enforce the types documented in CONTRIBUTING.md
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v4.4.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args:
+          - feat
+          - fix
+          - docs
+          - test
+          - refactor
+          - perf
+          - ci
+          - build
+          - chore
